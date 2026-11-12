@@ -1,0 +1,104 @@
+:root {
+  --neutro-100: #ffffff; 
+  --neutro-200: #f4f4f5;
+  --neutro-300: #e4e4e7; 
+  --neutro-400: #a1a1aa; 
+  --neutro-700: #27272a; 
+  --neutro-800: #18181b; 
+  --neutro-900: #09090b; 
+}
+
+:root {
+  --fundo-principal: var(--neutro-100);
+  --fundo-secundario: var(--neutro-200);
+  --cor-borda: var(--neutro-300);
+  
+  --texto-principal: var(--neutro-900);
+  --texto-secundario: var(--neutro-400);
+  
+  --fundo-botao: var(--neutro-900);
+  --texto-botao: var(--neutro-100);
+  --fundo-botao-hover: var(--neutro-400);
+}
+
+[data-theme="dark"] {
+  --fundo-principal: var(--neutro-800);
+  --fundo-secundario: var(--neutro-700);
+  --cor-borda: var(--neutro-700);
+  
+  --texto-principal: var(--neutro-100);
+  --texto-secundario: var(--neutro-400);
+  
+  --fundo-botao: var(--neutro-100);
+  --texto-botao: var(--neutro-900);
+  --fundo-botao-hover: var(--neutro-300);
+}
+
+*{
+    box-sizing: border-box;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.barra-navegacao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    height: 80px;
+    list-style: none;
+    border-bottom: 1px solid var(--cor-borda);
+    background-color: var(--fundo-secundario);
+}
+
+.botao-tema{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border-radius: 20px;
+    color: var(--texto-botao);
+    background-color: var(--fundo-botao);
+    padding: 8px;
+    cursor: pointer;
+}
+
+.botao-tema .icone-sol,
+.botao-tema .icone-lua{
+    display: block;
+    width: 20px;
+    height: 20px;
+    color: var(--texto-botao);
+}
+
+.botao-tema .icone-sol{
+    display: none;
+}
+
+[data-theme="dark"] .botao-tema .icone-lua{
+    display: none;
+}
+
+[data-theme="dark"] .botao-tema .icone-sol{
+    display: block;
+}
+
+.botao-tema:hover{
+    background-color: var(--fundo-botao-hover);
+    transition: background-color 0.2s ease-in;
+}   
+
+.barra-navegacao li:hover{
+    color: var(--texto-principal);
+    font-weight: bold;
+    cursor: pointer;
+    transition: font-weight 0.15s ease-in-out;
+}
+
+body{
+    background-color: var(--fundo-principal);
+    color: var(--texto-principal);
+}
